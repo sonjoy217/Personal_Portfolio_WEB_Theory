@@ -581,5 +581,81 @@ a {
 }
 
 
+/* Modal ( Project and Education/Research cards) */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 9, 20, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+}
+
+
+.modal-overlay.active {
+  display: flex;
+}
+
+
+.modal-card {
+  position: relative;
+  background: var(--bg-card);
+  color: var(--text-main);
+  border-radius: 24px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+
+.modal-body img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+}
+
+
+.modal-body .modal-date {
+  font-size: 0.8rem;
+  color: var(--purple-main);
+  font-weight: 700;
+}
+
+
+.modal-body h3 {
+  font-size: 1.4rem;
+  margin: 0.4rem 0 0.75rem 0;
+}
+
+
+.modal-body p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.modal-body .project-tags {
+  margin-bottom: 0;
+}
 
 

@@ -75,3 +75,97 @@ link.classList.add("active");
 }
 });
 });
+// ---- Detail Modal (Projects + Education/Certifications) ----
+const modalOverlay = document.getElementById("modalOverlay");
+const modalBody = document.getElementById("modalBody");
+const modalClose = document.getElementById("modalClose");
+
+
+const modalData = {
+"project-1": {
+image: "Image/pen-academy.png",
+date: "May 2026",
+title: "PenAcademy - Learning Platform",
+description: "Designed and developed a web-based learning platform guiding users from core networking concepts through hands-on penetration testing. Built a progress-tracking feature enabling learners to monitor their course completion using HTML, CSS, and JavaScript.",
+tags: ["HTML5", "CSS3", "JavaScript", "Cybersecurity"]
+},
+"project-2": {
+image: "Image/enterprise-campus-network.png",
+date: "Jul 2026",
+title: "Enterprise Campus Switching Network",
+description: "Designed and implemented an enterprise campus network for 4 departments using 1 Layer 3 switch, 2 Layer 2 access switches, and 8 end devices. Configured VLANs, IEEE 802.1Q trunking, STP, SVIs, Inter-VLAN Routing, and Layer 3 switching. Implemented EtherChannel (LACP) for link redundancy and bandwidth optimization. Verified end-to-end network connectivity using ICMP (Ping).",
+tags: ["Cisco Packet Tracer", "VLAN", "L3 Switching", "EtherChannel"]
+},
+"project-3": {
+image: "Image/earth orbital Simulation.png",
+date: "Jun 2026",
+title: "Interactive 3D Earth Orbit Simulation",
+description: "Developed an interactive 3D Earth orbit simulation using JavaScript and OpenGL. Implemented satellite orbit animation with mouse-click color interaction.",
+tags: ["JavaScript", "OpenGL"]
+},
+"edu-1": {
+date: "Expected March 2027",
+title: "B.Sc. in Computer Science & Engineering",
+description: "Southeast University — 11th Semester | CGPA: 3.65 / 4.00",
+tags: []
+},
+"edu-2": {
+date: "Issued June 2026 · Valid through June 2029",
+title: "CPTE - Certified Penetration Testing Engineer",
+description: "Mile2 Cybersecurity Institute. Specialized in Network Reconnaissance, Vulnerability Assessment, and Penetration Testing.",
+tags: []
+},
+"edu-3": {
+date: "In Progress",
+title: "Cisco Certified Network Associate (CCNA)",
+description: "Hands-on expertise in Routing, Switching, and Secure Device Access.",
+tags: []
+},
+"edu-4": {
+date: "Feb 2024",
+title: "21st Century Employability Skilling Program",
+description: "Wadhwani Foundation — Advanced (Basic Level), 77-hour professional training.",
+tags: []
+}
+};
+
+
+function openModal(key) {
+const data = modalData[key];
+if (!data) return;
+
+
+const tagsHtml = data.tags.length
+? `<div class="project-tags">${data.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>`
+: "";
+const imageHtml = data.image ? `<img src="${data.image}" alt="${data.title}">` : "";
+
+
+modalBody.innerHTML = `
+${imageHtml}
+<span class="modal-date">${data.date}</span>
+<h3>${data.title}</h3>
+<p>${data.description}</p>
+${tagsHtml}
+`;
+modalOverlay.classList.add("active");
+}
+
+function closeModal() {
+modalOverlay.classList.remove("active");
+}
+
+document.querySelectorAll("[data-modal]").forEach((card) => {
+card.addEventListener("click", () => openModal(card.getAttribute("data-modal")));
+});
+
+modalClose.addEventListener("click", closeModal);
+modalOverlay.addEventListener("click", (e) => {
+if (e.target === modalOverlay) closeModal();
+});
+document.addEventListener("keydown", (e) => {
+if (e.key === "Escape") closeModal();
+});
+
+
+
