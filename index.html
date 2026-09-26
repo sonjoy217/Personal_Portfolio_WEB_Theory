@@ -1,53 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonjoy Babu Sumon-Portfolio</title>
+<link rel="stylesheet" href="style.css">
 
-    <title>Sonjoy Babu Sumon-Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Google Fonts & FontAwesome Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
+<!-- Navigation Bar -->
+<nav class="navbar">
+<div class="nav-container">
+<a href="#hero" class="logo">
+<span class="logo-text">Sonjoy<span class="logo-dot">.dev</span></span>
+</a>
 
-<header class="navbar">
-    <div class="container nav-container">
 
-        <a href="#" class="logo">Sonjoy.dev</a>
+<ul class="nav-menu" id="navMenu">
+<li><a href="#about" class="nav-link">About</a></li>
+<li><a href="#skills" class="nav-link">Skills</a></li>
+<li><a href="#projects" class="nav-link">Project</a></li>
+<li><a href="#experience" class="nav-link">Experience</a></li>
+<li><a href="#education" class="nav-link">Education</a></li>
+<li><a href="#research" class="nav-link">Research</a></li>
+<li><a href="#contact" class="nav-link">Contact</a></li>
+</ul>
 
-        <nav class="nav-menu">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#projects" class="nav-link">Project</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#education" class="nav-link">Education</a>
-            <a href="#research" class="nav-link">Research</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </nav>
 
-        <div class="nav-actions">
-            <button id="theme-toggle" class="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </button>
+<div class="nav-actions">
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+<i class="fa-solid fa-moon"></i>
+</button>
+<a href="#contact" class="btn btn-primary btn-hire">Hire Me!</a>
+<button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+<i class="fa-solid fa-bars"></i>
+</button>
+</div>
+</div>
+</nav>
 
-            <a href="#contact" class="btn btn-primary">Hire Me</a>
 
-            <button class="hamburger">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+<!-- Hero Section -->
+<section class="hero" id="hero">
+<div class="hero-bg-watermark">HI</div>
+<div class="hero-container">
+<div class="hero-content">
+<span class="greeting">I am Sonjoy Babu Sumon</span>
+<h1 class="hero-title">Junior Network Engineer & Cybersecurity Enthusiast</h1>
+<p class="hero-subtitle">
+CSE undergraduate with hands-on experience in Cisco routing and switching (VLANs, Inter-VLAN Routing, EtherChannel, Static Routing, IPv4 subnetting). Currently pursuing CCNA and seeking a Junior Network Engineer role to apply networking skills in an enterprise environment.
+</p>
 
-    </div>
-</header>
 
-</body>
-</html>
+<div class="hero-cta">
+<a href="Image/CV.pdf" download="CV.pdf" class="btn btn-outline">
+<span>Download CV</span>
+<i class="fa-solid fa-download"></i>
+</a>
+<div class="social-links">
+<a href="https://linkedin.com/in/sonjoy217" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+<a href="https://github.com/sonjoy217" target="_blank" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+</div>
+</div>
+</div>
+
+
+<div class="hero-image-wrapper">
+<div class="image-card">
+<div class="code-bg-pattern">
+&lt;code&gt; { ip route 0.0.0.0 0.0.0.0 192.168.1.1 } &lt;/code&gt;
+</div>
+<img src="Image/photo-network-bg.png" alt="Sonjoy Babu Sumon" class="profile-img">
+</div>
+</div>
+</div>
+</section>
