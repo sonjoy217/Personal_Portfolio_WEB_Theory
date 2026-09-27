@@ -63,7 +63,7 @@ https://sonjoy-portfolio.vercel.app
 
 * **GitHub:** https://github.com/sonjoy217
 * **LinkedIn:** https://linkedin.com/in/sonjoy217
-* **Portfolio:** https://sonjoy-portfolio.vercel.app
+* **Portfolio:**(https://sonjoy217.github.io/sonjoy-porfolio/)
 
 ## Purpose
 
