@@ -403,6 +403,64 @@ focus on improving fraud detection performance on highly imbalanced data.</p>
 </div>
 </div>
 </section>
+<!-- Contact Me Section -->
+<section class="section contact-section" id="contact">
+<div class="container">
+<div class="contact-grid">
+<!-- Contact Form -->
+<div class="contact-card">
+<h2 class="contact-title">Let's work together!</h2>
+<p class="contact-desc">Contact with me for your advice and feedback or any other query. I will be happy to hear from you.</p>
+
+
+<form id="contactForm" class="contact-form" novalidate>
+<div class="form-row">
+<div class="form-group">
+<input type="text" id="firstName" placeholder="First name" required>
+<span class="error-message" id="firstNameError"></span>
+</div>
+<div class="form-group">
+<input type="text" id="lastName" placeholder="Last name" required>
+<span class="error-message" id="lastNameError"></span>
+</div>
+</div>
+
+
+<div class="form-row">
+<div class="form-group">
+<input type="email" id="email" placeholder="Email address" required>
+<span class="error-message" id="emailError"></span>
+</div>
+<div class="form-group">
+<input type="tel" id="phone" placeholder="Phone number">
+<span class="error-message" id="phoneError"></span>
+</div>
+</div>
+
+
+<div class="form-group">
+<select id="service" class="form-select">
+<option value="" disabled selected>Choose Service</option>
+<option value="network">Network Engineering</option>
+<option value="security">Cybersecurity Consultation</option>
+<option value="web">Web Development</option>
+</select>
+</div>
+
+
+<div class="form-group">
+<textarea id="message" rows="4" placeholder="Message" required></textarea>
+<span class="error-message" id="messageError"></span>
+</div>
+
+
+<button type="submit" class="btn btn-primary btn-submit">
+<span>Send Message</span>
+<i class="fa-solid fa-paper-plane"></i>
+</button>
+</form>
+<div id="formFeedback" class="form-feedback"></div>
+</div>
 
 
 
