@@ -167,5 +167,130 @@ document.addEventListener("keydown", (e) => {
 if (e.key === "Escape") closeModal();
 });
 
+// FIX 1: real, original interactive feature — validates every field with
+// messages, marks invalid fields, and only "sends" the message once
+// every rule passes.
+const contactForm = document.getElementById("contactForm");
+const formFeedback = document.getElementById("formFeedback");
+
+
+const validationRules = [
+{
+id: "firstName",
+errorId: "firstNameError",
+validate: (value) => value.trim().length >= 2,
+message: "First name must be at least 2 characters."
+},
+{
+id: "lastName",
+errorId: "lastNameError",
+validate: (value) => value.trim().length >= 2,
+message: "Last name must be at least 2 characters."
+},
+{
+id: "email",
+errorId: "emailError",
+validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()),
+message: "Please enter a valid email address."
+},
+{
+id: "message",
+errorId: "messageError",
+validate: (value) => value.trim().length >= 10,
+message: "Message must be at least 10 characters."
+}
+];
+
+
+function validateField(rule) {
+const input = document.getElementById(rule.id);
+const errorEl = document.getElementById(rule.errorId);
+const passed = rule.validate(input.value);
+
+
+if (passed) {
+input.classList.remove("invalid");
+errorEl.textContent = "";
+} else {
+input.classList.add("invalid");
+errorEl.textContent = rule.message;
+}
+return passed;
+}
+
+
+function validatePhoneField() {
+const phoneInput = document.getElementById("phone");
+const phoneError = document.getElementById("phoneError");
+const value = phoneInput.value.trim();
+
+
+
+
+if (value === "") {
+phoneInput.classList.remove("invalid");
+phoneError.textContent = "";
+return true;
+}
+
+
+const passed = /^[0-9+\-\s()]{7,15}$/.test(value);
+if (passed) {
+phoneInput.classList.remove("invalid");
+phoneError.textContent = "";
+} else {
+phoneInput.classList.add("invalid");
+phoneError.textContent = "Please enter a valid phone number.";
+}
+return passed;
+}
+
+
+function validateContactForm() {
+let isValid = true;
+validationRules.forEach((rule) => {
+if (!validateField(rule)) isValid = false;
+});
+if (!validatePhoneField()) isValid = false;
+return isValid;
+}
+
+
+// Live feedback: clear a field's error as soon as it becomes valid again
+validationRules.forEach((rule) => {
+document.getElementById(rule.id).addEventListener("input", () => validateField(rule));
+});
+document.getElementById("phone").addEventListener("input", validatePhoneField);
+
+
+contactForm.addEventListener("submit", (e) => {
+e.preventDefault();
+
+
+if (!validateContactForm()) {
+formFeedback.className = "form-feedback error";
+formFeedback.textContent = "Please fix the highlighted fields and try again.";
+formFeedback.style.display = "block";
+return;
+}
+
+
+formFeedback.className = "form-feedback success";
+formFeedback.textContent = "Thank you! Your message has been sent successfully.";
+formFeedback.style.display = "block";
+
+
+contactForm.reset();
+document
+.querySelectorAll(".form-group input, .form-group textarea")
+.forEach((el) => el.classList.remove("invalid"));
+document.querySelectorAll(".error-message").forEach((el) => (el.textContent = ""));
+
+
+setTimeout(() => {
+formFeedback.style.display = "none";
+}, 4000);
+});
+});
 
 

@@ -793,18 +793,15 @@ a {
     grid-template-columns: 1fr;
   }
 
-
   .hero-image-wrapper {
     order: -1;
   }
 }
 
-
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
-
 
   .nav-menu {
     position: fixed;
@@ -820,26 +817,104 @@ a {
     overflow-y: auto;
   }
 
-
   .nav-menu.active {
     right: 0;
   }
-
 
   .hero-title {
     font-size: 2.2rem;
   }
 
-
   .form-row {
     grid-template-columns: 1fr;
   }
-
 
   .edu-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+}
+
+/*
+   FIX 1: Custom JS form-validation styling
+==================================================== */
+.error-message {
+  display: block;
+  min-height: 1rem;
+  margin-top: 0.35rem;
+  color: #dc2626;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid {
+  border-color: #dc2626;
+}
+
+.form-group input.invalid:focus,
+.form-group textarea.invalid:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+.form-feedback.error {
+  display: block;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/*
+   FIX 2: Dedicated TABLET breakpoint ================================================= */
+@media (max-width: 992px) and (min-width: 769px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+
+  .nav-container {
+    padding: 1rem 1.5rem;
+  }
+
+
+  .nav-menu {
+    gap: 1.25rem;
+  }
+
+
+  .hero-container {
+    gap: 2.5rem;
+  }
+
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+
+  .image-card {
+    width: 280px;
+    height: 350px;
+  }
+
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .contact-grid {
+    gap: 2rem;
+  }
+
+
+  .contact-card {
+    padding: 2.25rem;
   }
 }
 
