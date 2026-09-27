@@ -57,7 +57,7 @@ sonjoy-portfolio/
 The portfolio is deployed on **Vercel** and connected to this GitHub repository.
 
 **Live Website:**
-https://sonjoy-portfolio.vercel.app
+(https://sonjoy217.github.io/sonjoy-porfolio/)
 
 ## Connect With Me
 
