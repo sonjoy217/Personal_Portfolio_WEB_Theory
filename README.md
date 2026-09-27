@@ -6,7 +6,7 @@ This project showcases my **technical skills, academic background, projects, cer
 
 ## Live Portfolio
 
-**[Visit My Portfolio](https://sonjoy-portfolio.vercel.app)**
+**[Visit My Portfolio](https://sonjoy217.github.io/sonjoy-porfolio/)**
 
 ## About Me
 
