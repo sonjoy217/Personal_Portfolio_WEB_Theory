@@ -63,7 +63,7 @@ https://sonjoy217.github.io/sonjoy/
 
 * **GitHub:** https://github.com/sonjoy217
 * **LinkedIn:** https://linkedin.com/in/sonjoy217
-* **Portfolio:**(https://sonjoy217.github.io/sonjoy/)
+* **Portfolio:** https://sonjoy217.github.io/sonjoy/
 
 ## Purpose
 
