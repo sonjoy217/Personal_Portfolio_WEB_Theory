@@ -1047,11 +1047,10 @@ a {
 
 .site-footer {
     padding: 4rem 0 1.5rem;
-    border-top: 1px solid rgba(128, 128, 128, 0.2);
-      background: rgba(128, 0, 255, 0.15);
-    
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    background: #2B1559;
+    color: #ffffff;
 }
-
 .footer-content {
     display: flex;
     align-items: center;
@@ -1070,11 +1069,12 @@ a {
 }
 
 .footer-links a {
-    color: inherit;
+    color: #ffffff;
     text-decoration: none;
     font-size: 0.9rem;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .footer-links a,
 .footer-bottom p {
     font-weight: 700;
@@ -1099,14 +1099,23 @@ a {
 }
 
 .footer-bottom p {
+   font-weight: 700;
     margin: 0;
     text-align: center;
 
     font-size: 0.85rem;
 
     /* HALKA Purple */
-      color: #a970ff;
+       color: #ffffff;
 }
+.footer-brand .logo-text {
+    color: #ffffff;
+}
+
+.footer-brand .logo-dot {
+    color: var(--purple-main);
+}
+
 
 /* Back To Top Arrow */
 .back-to-top {
